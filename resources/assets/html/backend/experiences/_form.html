@@ -1,0 +1,37 @@
+<fieldset>
+	<div class="alert alert-danger" ng-if="formErrors">
+		<ul>
+			<li ng-repeat="error in formErrors">
+				<p ng-repeat="e in error">{{e}}</p>
+			</li>
+		</ul>
+	</div>
+	<div class="block block-rounded">
+		<div class="block-header remove-padding-b">
+			<h4 class="block-title">Detalles del experiencia</h4>
+		</div>
+		<div class="block-content">
+			<div class="form-group" ng-class="{'has-error': validate && form.name.$error.required}">
+				<label class="control-label" for="name">Nombre <span class="required">*</span></label>
+				<div>
+					<input type="text" id="name" name="name" class="form-control" ng-model="fd.experience.name" required>
+				</div>
+				<p class="help-block ng-hide" ng-show="validate && form.name.$error.required">Ingrese el nombre de la experiencia</p>
+			</div>
+			<div class="form-group" ng-class="{'has-error': validate && form.description.$error.required}">
+				<label class="control-label" for="description">Descripción <span class="required">*</span></label>
+				<div>
+					<textarea id="description" name="description" class="form-control" ng-model="fd.experience.description"></textarea>
+				</div>
+				<p class="help-block ng-hide" ng-show="validate && form.description.$error.required">Ingrese una descripción de la experiencia</p>
+			</div>
+			<div class="form-group" ng-class="{'has-error': validate && form.price.$error.required}">
+				<label class="control-label" for="price">Precio <span class="required">*</span></label>
+				<div>
+					<input type="numeric" id="price" name="price" class="form-control" ng-model="fd.experience.price" min="0" step="any" required>
+				</div>
+				<p class="help-block ng-hide" ng-show="validate && form.price.$error.required">Ingrese el nombre de la experiencia</p>
+			</div>
+		</div>
+	</div>
+</fieldset>

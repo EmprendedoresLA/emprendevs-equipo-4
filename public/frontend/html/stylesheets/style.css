@@ -1,0 +1,201 @@
+
+html, body {
+  height: 100%;
+  background-color: #F5F5F5;
+}
+.masthead h1.ui.header {
+  font-family: "ProximaNova-Light";
+  margin-top: 2.6em;
+  font-size: 4em !important;
+  font-weight: 100;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.masthead h1.ui.header .sub.header {
+  font-family: "ProximaNova-bold";
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 1);
+}
+span.a {
+  font-size: 40%;
+  color: #fff;
+}
+span.a:hover {
+  cursor: pointer;
+  color: brown;
+}
+.ui.header:first-child {
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+.sticky{
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 0;
+  padding: 0;
+  background: #f5f5f5 none repeat scroll 0 0;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 0.7em;
+  margin-left: -10px;
+  margin-right: -10px;
+  z-index: 80;
+  -webkit-box-shadow: 0px 13px 10px -15px rgba(0,0,0,0.34);
+  -moz-box-shadow: 0px 13px 10px -15px rgba(0,0,0,0.34);
+  box-shadow: 0px 13px 10px -15px rgba(0,0,0,0.34);
+}
+.main.container.first-child {
+  margin-top: 2em;
+}
+.ui.cards a.card:hover,.ui.link.card:hover,.ui.link.cards .card:hover,a.ui.card:hover {
+  z-index: 0 !important;
+}
+.section{
+  padding-top: 0.6em;
+}
+.ui.button{
+    border-color: #FFF!important;
+    font-size: 0.92rem;
+    border: 1px solid #CCC;
+    cursor: pointer;
+    display: inline-block;
+    min-height: 1em;
+    outline: none;
+    vertical-align: baseline;
+    background: #fafafa linear-gradient(rgba(255, 255, 255, 0.15), rgba(0, 0, 0, 0.1));
+    color: #333333;
+    margin: 0em 0.25em 0em 0em;
+    padding: 0.75em 1.15em 0.75em;
+    text-transform: none;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.9);
+    font-weight: bold;
+    line-height: 1em;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0em;
+    box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.05) inset, 0 0 0 1px rgba(0, 0, 0, 0.13) inset, 0 1px 3px rgba(0, 0, 0, 0.05);
+    user-select: none;
+    transition: opacity 0.1s ease, background-color 0.1s ease, color 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+    will-change: '';
+    -webkit-tap-highlight-color: transparent;
+}
+
+.card {
+      border-radius: 0em;
+}
+.ui.link.small.card.fluid.centered.one{
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+
+
+.ui.table thead tr th{
+   padding: 0.6em 0.6em;
+}
+.ui.table caption {
+font-size: 1.4em !important;
+text-align: left ;
+}
+.ui.table tr td.disabled {
+background-color: #efefef !important;
+color: #d4d4d5 !important;
+cursor: default !important;
+}
+.ui.table tr td:not(.disabled):hover {
+cursor: pointer !important;
+background-color: #CFD0D2 !important;
+color: #27292A !important;
+}
+.ui.table:not(.unstackable) tr > td,
+.ui.table:not(.unstackable) tr > th {
+display: table-cell !important;
+}
+.ui.table:not(.unstackable) thead {
+display: table-header-group !important;
+}
+@font-face {
+font-family: "ProximaNova-Extrabld";
+src: url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_5_0.eot?#iefix") format("embedded-opentype"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_5_0.woff2") format("woff2"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_5_0.woff") format("woff"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_5_0.ttf") format("truetype");
+}
+@font-face {
+font-family: "ProximaNova-Bold";
+src: url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_2_0.eot?#iefix") format("embedded-opentype"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_2_0.woff2") format("woff2"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_2_0.woff") format("woff"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_2_0.ttf") format("truetype");
+}
+@font-face {
+font-family: "ProximaNova-Semibold";
+src: url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_F_0.eot?#iefix") format("embedded-opentype"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_F_0.woff2") format("woff2"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_F_0.woff") format("woff"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_F_0.ttf") format("truetype");
+}
+@font-face {
+font-family: "ProximaNova-Medium";
+src: url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_14_0.eot?#iefix") format("embedded-opentype"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_14_0.woff2") format("woff2"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_14_0.woff") format("woff"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_14_0.ttf") format("truetype");
+}
+@font-face {
+font-family: "ProximaNova-Regular";
+src: url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_10_0.eot?#iefix") format("embedded-opentype"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_10_0.woff2") format("woff2"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_10_0.woff") format("woff"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_10_0.ttf") format("truetype");
+}
+@font-face {
+font-family: "ProximaNova-Light";
+src: url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_E_0.eot?#iefix") format("embedded-opentype"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_E_0.woff2") format("woff2"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_E_0.woff") format("woff"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_E_0.ttf") format("truetype");
+}
+@font-face {
+font-family: "ProximaNova-Thin";
+src: url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_11_0.eot?#iefix") format("embedded-opentype"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_11_0.woff2") format("woff2"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_11_0.woff") format("woff"), url("https://storage.googleapis.com/tock-assets.tocktix.com/fonts/proxima/2E1DFB_11_0.ttf") format("truetype");
+}
+
+
+
+.hidden.menu {
+display: none;
+}
+
+@media only screen and (max-width: 700px) {
+.masthead h1.ui.header {
+font-size: 2em;
+margin-top: 1.5em;
+}
+.masthead h2 {
+margin-top: 0.5em;
+font-size: 1.5em;
+}
+.ui.table:not(.unstackable) tr > td,
+.ui.table:not(.unstackable) tr > th {
+padding: 0.35em !important;
+}
+}
+
+.container.center {
+padding: inherit !important;
+}
+.ui.fixed.menu {
+display: flex !important;
+}
+.ui.button.big.margin {
+margin: 0.5em 0.5em 0.5em 0.5em;
+}
+
+
+
+
+
+
+.card.disabled {
+border-radius: 0em;
+cursor: default!important;
+opacity: 0.45 !important;
+color: rgba(50, 50, 50, 0.7)!important;
+box-shadow: 1px 1px 0 0 #bcbdbd,0 0 1px 1px #d4d4d5 !important;
+-webkit-transform: translateY(0px)!important;
+-ms-transform: translateY(0px)!important;
+transform: translateY(0px)!important;
+}
+.card.check {
+background: rgba(0, 0, 0, 0.05) none repeat scroll 4% 4% !important;
+box-shadow: 0 0 1px 1px #bcbdbd,1px 1px 0 0 #d4d4d5 !important;
+-webkit-transform: translateY(0px)!important;
+-ms-transform: translateY(0px)!important;
+transform: translateY(0px)!important;
+}

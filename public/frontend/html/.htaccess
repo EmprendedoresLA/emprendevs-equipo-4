@@ -1,0 +1,99 @@
+# 1.To use URL Alias you need to be running apache with mod_rewrite enabled. 
+
+# 2. In your opencart directory rename htaccess.txt to .htaccess.
+
+# For any support issues please visit: http://www.opencart.com
+
+Options +FollowSymlinks
+
+# Prevent Directoy listing 
+Options -Indexes
+
+# Prevent Direct Access to files
+<FilesMatch "\.(tpl|ini|log)">
+ Order deny,allow
+ Deny from all
+</FilesMatch>
+
+### Additional Settings that may need to be enabled for some servers 
+### Uncomment the commands by removing the # sign in front of it.
+### If you get an "Internal Server Error 500" after enabling any of the following settings, restore the # as this means your host doesn't allow that.
+
+# 1. If your cart only allows you to add one item at a time, it is possible register_globals is on. This may work to disable it:
+# php_flag register_globals off
+
+# 2. If your cart has magic quotes enabled, This may work to disable it:
+# php_flag magic_quotes_gpc Off
+
+# 3. Set max upload file size. Most hosts will limit this and not allow it to be overridden but you can try
+# php_value upload_max_filesize 999M
+
+# 4. set max post size. uncomment this line if you have a lot of product options or are getting errors where forms are not saving all fields
+# php_value post_max_size 999M
+
+# 5. set max time script can take. uncomment this line if you have a lot of product options or are getting errors where forms are not saving all fields
+# php_value max_execution_time 200
+
+# 6. set max time for input to be recieved. Uncomment this line if you have a lot of product options or are getting errors where forms are not saving all fields
+# php_value max_input_time 200
+
+# 7. disable open_basedir limitations
+# php_admin_value open_basedir none
+
+#Cache Expires (luismaf)
+<IfModule mod_expires.c>
+	ExpiresActive on
+    ExpiresDefault "access plus 1 month"
+	ExpiresByType text/html "access plus 48 hours"
+	ExpiresByType image/png "access plus 1 month"
+	ExpiresByType image/jpeg "access plus 1 month"
+	ExpiresByType image/gif "access plus 1 month"
+	ExpiresByType text/javascript "access plus 1 month"
+	ExpiresByType application/javascript "access plus 1 month"
+	ExpiresByType application/x-javascript "access plus 1 month"
+	ExpiresByType application/x-shockwave-flash "access plus 1 month"
+	ExpiresByType image/x-icon "access plus 1 month"
+	
+	# cache.appcache needs re-requests in FF 3.6 (thanks Remy ~Introducing HTML5)
+	ExpiresByType text/cache-manifest "access plus 0 seconds"
+	<ifModule mod_headers.c>
+		<filesMatch "\.(html|htm)$">
+			Header set Cache-Control "max-age=86400, private, must-revalidate"
+		</filesMatch>
+		<filesMatch "\.(xml|txt)$">
+			Header set Cache-Control "max-age=216000, public, must-revalidate"
+		</filesMatch>
+		<filesMatch "\.(ico|pdf|jpg|jpeg|png|gif|swf|flv|mp3|mp4|css|js)$">
+			Header set Cache-Control "max-age=2592000, public"
+		</filesMatch>
+		Header set Connection keep-alive
+		Header append Vary User-Agent
+		Header unset ETag
+	</IfModule>
+	FileETag None
+</IfModule>
+
+#Compression (luismaf)
+<ifModule mod_gzip.c>
+  mod_gzip_on Yes
+  mod_gzip_dechunk Yes
+  mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
+  mod_gzip_item_include handler ^cgi-script$
+  mod_gzip_item_include mime ^text/.*
+  mod_gzip_item_include mime ^application/x-javascript.*
+  mod_gzip_item_exclude mime ^image/.*
+  mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+<ifModule !mod_gzip.c>
+	<IfModule mod_deflate.c>
+	  SetOutputFilter DEFLATE
+	  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|rar|zip)$ no-gzip
+	  # Properly handle old browsers that do not support compression
+	  BrowserMatch ^Mozilla/4 gzip-only-text/html
+	  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+	  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+	</IfModule>
+</IfModule>
+<IfModule mod_rewrite.c>
+    SetEnv HTTP_MOD_REWRITE On
+</IfModule>

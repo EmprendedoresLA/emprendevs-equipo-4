@@ -1,0 +1,39 @@
+{
+  "name": "emprendevs-equipo-4",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Matias Piuma <matius@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/EmprendedoresLA/emprendevs-equipo-4",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.4",
+    "angular": "~1.4.7",
+    "restangular": "~1.5.1",
+    "angular-route": "~1.4.7",
+    "lodash": "~3.10.1",
+    "bootstrap": "~3.3.5",
+    "jquery-placeholder": "~2.3.0",
+    "jquery-scrollLock": "~1.1.1",
+    "remarkable-bootstrap-notify": "~3.1.3",
+    "slimScroll": "~1.3.6",
+    "Chart.js": "~1.0.2",
+    "angular-sanitize": "~1.4.7",
+    "angular-strap": "~2.3.6",
+    "angular-chart.js": "~0.8.5",
+    "simple-line-icons": "~2.2.3",
+    "font-awesome": "~4.4.0",
+    "angular-ui-calendar": "~1.0.1",
+    "moment": "~2.10.6"
+  }
+}

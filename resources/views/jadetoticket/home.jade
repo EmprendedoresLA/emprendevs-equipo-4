@@ -1,0 +1,105 @@
+extends ./layout
+block content
+  .pusher
+    .ui.inverted.vertical.masthead.center.aligned.segment(ng-style="bg" ng-show="home")
+        .ui.text.container
+          h1.ui.inverted.header {{jsonRestaurant.name}}
+            .sub.header {{jsonRestaurant.description}}
+            span.a(index='0' title='Pagina web del complejo {{jsonRestaurant.web}}.' href="http://{{jsonRestaurant.web}}" rel="nofollow" ) {{jsonRestaurant.web}}
+          
+          button#btnmain.ui.button.big(tabindex='1') Reserve su Experiencia
+
+    #step1.section(ng-style="bg2")
+    
+      .ui.text.container(ng-controller="message" ng-show="alerts.length > 0")
+        .ui.floating.message( title='cerrar mensaje' ng-click="closeAlert($index)" ng-repeat="alert in alerts" class="{{alert.type}}")
+          i.close.icon
+          .header {{alert.header}}
+          div {{alert.msg}}
+ 
+      .ui.text.main.container.first-child(style='min-height: 428px;' ng-show='showStep1')
+        .sticky
+          h1.ui.header Elija una experiencia
+        .ui.one.column.grid
+          .column
+            .ui.link.fluid.card(tabindex='{{$index+2}}' title='Descripción de la experiencia: {{types.meta}}, cantidad de personas que pueden participar {{ types.sizes[0] }} a {{ types.sizes[types.sizes.length-1] }}, precio por persona {{ types.price | currency : "$" : 2 }} ' ng-repeat='types in calendario.ticketTypes' ng-click='experienceSelect($index,types)')
+              .content
+                .header
+                  span.right.floated {{ types.sizes[0] }} - {{ types.sizes[types.sizes.length-1] }} persona.
+                  span {{types.name}}
+                .meta
+                  a {{types.meta}}
+                .description {{types.description}}
+                .extra.content
+                  span.right.floated {{ types.price | currency : "$" : 2 }} persona.
+                  span
+                    i.ticket.icon
+                    | {{types.type}}
+              
+      .ui.main.text.container(ng-show='showStep2')
+        .sticky
+          h1.ui.header Cantidad de personas.
+            .sub.header Seleccione la cantidad de personas.
+        .ui.eight.wide.computer.eight.wide.tablet.six.wide.mobile.column.very.relaxed.grid.container.center.aligned(style='position:relative;')
+          .column.wide.one
+            // .disabled repetir botones
+            button.ui.button.big.margin(ttabindex='{{$index+2}}' title='{{sizesPipol}} personas.' ng-repeat='sizesPipol in calendario.ticketTypes[ticketElegido.ticket.index].sizes' ng-click='sizeSelect($index)') {{sizesPipol}}
+            // mas persoasn
+            
+            
+      .ui.main.text.container(ng-show='showStep3')
+        .sticky
+          h1.ui.header Elija una fecha.
+            .sub.header Seleccione un día que asistira.
+        #agenda
+    
+      .ui.main.text.container(ng-show='showStep4')
+        .sticky
+          h1.ui.header Elija el momento.
+            .sub.header {{calendario.ticketGroups[ticketElegido.date].length}} tiempos disponibles.
+        .ui.one.cards
+          .ui.link.small.card.fluid.centered.one(ttabindex='{{$index+2}}' title='{{ticket.t}} horas, {{ticketElegido.ticket.price | currency : "$" : 2}} precio por persona.' ng-repeat='ticket in calendario.ticketGroups[ticketElegido.date]' ng-click='hourSelect(ticket.t)')
+            .content
+              .header
+                span.right.floated {{ticket.n}} Lugares.
+                span {{ticket.t}}
+              .meta {{ticketElegido.ticket.price | currency : "$" : 2}} precio por persona.
+    
+    
+    
+      .ui.main.text.container(ng-show='showStep5')
+        .sticky
+          h1.ui.header Revise su reserva.
+    
+        .ui.piled.segment
+          span.ui.black.ight.ribbon.label Detalles.
+    
+          p {{result.dateString}} a las {{result.hourString}}
+          p {{result.tickets.length}} persona.
+    
+          p Tipo de servicio: {{result.serviceType}}
+          p Monto ({{result.tickets.length}} × {{result.ticketTypes.defaultPrice | currency : "$" : 2}}) {{result.ticketTypes.defaultPrice*result.tickets.length | currency : "$" : 2}}
+    
+          .ui.segment.right.aligned
+            p Total: {{result.ticketTypes.defaultPrice | currency : "$" : 2}}
+        .ui.one.column.grid
+          .column.right.aligned
+            button.black.ui.button(title='Confirma el ticket.' ttabindex='3' ng-click="confirmar()") Confirmar.
+    
+      .ui.modal.basic
+        .ui.one.column.center.aligned.segment
+          form.ui.large.form
+            .ui.stacked.segment
+              .field
+                .ui.left.icon.input
+                  i.user.icon
+                  input(name='email', placeholder='E-mail address', type='text')
+              .field
+                .ui.left.icon.input
+                  i.lock.icon
+                  input(name='password', placeholder='Password', type='password')
+              .ui.large.teal.submit.button(ng-click='Login()') Login
+            .ui.error.message
+          .ui.message
+            | New to us?
+            a(ng-click='SignUp()') Sign Up

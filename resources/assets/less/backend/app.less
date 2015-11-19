@@ -1,0 +1,65 @@
+// Bootstrap framework & overwriting
+@import "vendor/bower_components/bootstrap/less/bootstrap";
+
+// Variables and Mixins
+@import "variables.less";
+@import "mixins.less";
+
+@import "modules/base.bootstrap-overwrite.less";
+
+// Icons
+@import "vendor/bower_components/font-awesome/less/font-awesome";
+@fa-font-path: "/fonts";
+@import "vendor/bower_components/simple-line-icons/less/simple-line-icons";
+@simple-line-font-path: "/fonts/";
+@simple-line-font-family: "simple-line-icons";
+@simple-line-icon-prefix: si-;
+
+// Modules
+@import "modules/oneui.layout.less";
+@import "modules/oneui.forms.less";
+@import "modules/oneui.blocks.less";
+@import "modules/oneui.navigation.less";
+@import "modules/oneui.lists.less";
+@import "modules/oneui.images.less";
+@import "modules/oneui.utilities.less";
+// @import "modules/oneui.themes.less";
+@import "modules/oneui.print.less";
+
+// Third Party
+@import "modules/extend.animations.less";
+@import "modules/extend.plugins.less";
+
+@import (inline) "vendor/bower_components/angular-chart.js/dist/angular-chart.css";
+@import (inline) "vendor/bower_components/fullcalendar/dist/fullcalendar.css";
+
+.chat-window {
+	margin: 0;
+	padding: 0;
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 2000;
+}
+
+.chat-top-bar {
+  background: #666;
+  color: #fff;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  height: auto;
+  max-height: 70px;
+  border-radius: 0;
+}
+
+.ng-hide {
+  display: none;
+}
+
+.btn-min-width {
+  min-width: 100px;
+}
+

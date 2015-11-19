@@ -1,0 +1,44 @@
+<header class="content">
+	<div class="row items-push">
+		<div class="col-sm-7">
+			<h1 class="h3 font-w400 push-5-t">Experiencias</h1>
+		</div>
+		<div class="col-sm-5 text-right">
+			<a ng-href="/admin/#/experiences/create" class="btn btn-primary btn-min-width">
+				<i class="fa fa-plus"></i> Agregar Experiencia
+			</a>
+		</div>
+	</div>
+</header>
+<section class="content">
+	<div class="block block-rounded" ng-class="{'block-opt-refresh': getting}">
+		<div class="block-header remove-padding-b">
+			<ul class="block-options">
+				<li><button type="button" ng-click="getCustomers()" title="recargar" bs-tooltip><i class="fa fa-refresh"></i></button></li>
+			</ul>
+			<h4 class="block-title">Todas las experiencias</h4>
+		</div>
+		<div class="block-content">
+			<p class="ng-hide text-muted" ng-show="experiences.length == 0">no se encontraron experiencias cargadas</p>
+			<table class="ng-hide table table-hover" ng-show="experiences.length > 0">
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Precio</th>
+						<th>Estado</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="row in experiences">
+						<td><a ng-href="/admin/#/experiences/{{row.id}}">{{ row.name }}</a></td>
+						<td>{{ row.price }}</td>
+						<td>
+							<span class="ng-hide label label-success" ng-show="row.status">activo</span>
+							<span class="ng-hide label label-danger" ng-show="!row.status">inactivo</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</section>

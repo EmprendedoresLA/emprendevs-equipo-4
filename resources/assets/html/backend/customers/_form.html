@@ -1,0 +1,54 @@
+<fieldset>
+	<div class="alert alert-danger" ng-if="formErrors">
+		<ul>
+			<li ng-repeat="error in formErrors">
+				<p ng-repeat="e in error">{{e}}</p>
+			</li>
+		</ul>
+	</div>
+	<div class="block block-rounded">
+		<div class="block-header remove-padding-b">
+			<h4 class="block-title">Detalles del cliente</h4>
+		</div>
+		<div class="block-content">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group" ng-class="{'has-error': validate && form.first_name.$error.required}">
+						<label class="control-label" for="first_name">Nombre <span class="required">*</span></label>
+						<div>
+							<input type="text" id="first_name" name="first_name" class="form-control" ng-model="fd.customer.first_name" required>
+						</div>
+						<p class="help-block ng-hide" ng-show="validate && form.first_name.$error.required">Ingrese el nombre del cliente</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group" ng-class="{'has-error': validate && form.last_name.$error.required}">
+						<label class="control-label" for="last_name">Apellido</label>
+						<div>
+							<input type="text" id="last_name" name="last_name" class="form-control" ng-model="fd.customer.last_name">
+						</div>
+						<p class="help-block ng-hide" ng-show="validate && form.last_name.$error.required">Ingrese el apellido del cliente</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group" ng-class="{'has-error': validate && form.email.$error.required}">
+						<label class="control-label" for="email">Email</label>
+						<div>
+							<input type="email" id="email" name="email" class="form-control" ng-model="fd.customer.email">
+						</div>
+						<p class="help-block ng-hide" ng-show="validate && form.email.$error.required">Ingrese el email del cliente</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group" ng-class="{'has-error': validate && form.phone.$error.required}">
+						<label class="control-label" for="phone">Teléfono <span class="required">*</span></label>
+						<div>
+							<input type="text" id="phone" name="phone" class="form-control" ng-model="fd.customer.phone" required>
+						</div>
+						<p class="help-block ng-hide" ng-show="validate && form.phone.$error.required">Ingrese el teléfono del cliente</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</fieldset>

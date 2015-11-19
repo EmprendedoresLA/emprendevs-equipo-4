@@ -1,0 +1,92 @@
+<header class="content">
+	<h1 class="h3 font-w400 push-5-t">Dashboard</h1>
+</header>
+<section class="content content-boxed">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="block block-rounded">
+				<div class="block-header remove-padding-b bg-gray-lighter">
+					<h4 class="block-title">Ultimas 5 reservas</h4>
+				</div>
+				<div class="block-content bg-gray-lighter remove-padding-l remove-padding-r">
+					<table class="table remove-margin-b font-s13">
+						<tbody>
+							<tr>
+								<td class="font-w600">
+									<a href="javascript:void(0)">Matias Piuma</a>
+									<p>3 tickets Naked Sushi</p>
+								</td>
+								<td class="hidden-xs text-muted text-right" style="vertical-align: top;width: 100px;">12/11 23:00</td>
+								<td class="font-w600 text-success text-right" style="vertical-align: top;width: 50px;">$210</td>
+							</tr>
+							<tr>
+								<td class="font-w600">
+									<a href="javascript:void(0)">Luis Ma</a>
+									<p>3 tickets Chrismas Lunch</p>
+								</td>
+								<td class="hidden-xs text-muted text-right" style="vertical-align: top;width: 100px;">22/12 23:00</td>
+								<td class="font-w600 text-success text-right" style="vertical-align: top;width: 50px;">$600</td>
+							</tr>
+							<tr>
+								<td class="font-w600">
+									<a href="javascript:void(0)">Matias Marani</a>
+									<p>2 tickets Chrismas Lunch</p>
+								</td>
+								<td class="hidden-xs text-muted text-right" style="vertical-align: top;width: 100px;">22/12 22:00</td>
+								<td class="font-w600 text-success text-right" style="vertical-align: top;width: 50px;">$400</td>
+							</tr>
+							<tr>
+								<td class="font-w600">
+									<a href="javascript:void(0)">Alfonso Rognoni</a>
+									<p>6 tickets Chrismas Lunch</p>
+								</td>
+								<td class="hidden-xs text-muted text-right" style="vertical-align: top;width: 100px;">23/12 21:00</td>
+								<td class="font-w600 text-success text-right" style="vertical-align: top;width: 50px;">$1200</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="block block-rounded">
+				<div class="block-header remove-padding-b bg-gray-lighter">
+					<h4 class="block-title">Top 5 clientes</h4>
+				</div>
+				<div class="block-content bg-gray-lighter">
+					<p class="text-center text-muted">No hay datos por el momento</p>
+				</div>
+			</div>
+			<div class="block block-rounded">
+				<div class="block-header remove-padding-b bg-gray-lighter">
+					<h4 class="block-title">Top 5 artículos</h4>
+				</div>
+				<div class="block-content bg-gray-lighter">
+					<p class="text-center text-muted">No hay datos por el momento</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="block block-rounded">
+				<div class="block-header remove-padding-b">
+					<h4 class="block-title">Reservas en el tiempo</h4>
+				</div>
+				<div class="block-content">
+					<canvas id="line" class="chart chart-line" chart-data="chart1.data"
+					  chart-labels="chart1.labels" chart-legend="true" chart-series="chart1.series"
+					  chart-click="chart1.onClick" >
+					</canvas> 
+				</div>
+			</div>
+			<div class="block block-rounded">
+				<div class="block-header remove-padding-b">
+					<h4 class="block-title">Ingresos por experiencia</h4>
+				</div>
+				<div class="block-content">
+					<canvas id="line" class="chart chart-line" chart-data="chart2.data"
+					  chart-labels="chart2.labels" chart-legend="true" chart-series="chart2.series"
+					  chart-click="chart2.onClick" >
+					</canvas> 
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

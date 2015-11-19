@@ -1,0 +1,57 @@
+<fieldset>
+	<div class="alert alert-danger" ng-if="formErrors">
+		<ul>
+			<li ng-repeat="error in formErrors">
+				<p ng-repeat="e in error">{{e}}</p>
+			</li>
+		</ul>
+	</div>
+	<div class="block block-rounded">
+		<div class="block-header">
+			<h4 class="block-title">Configuración</h4>
+		</div>
+		<div class="block-content">
+			<div class="form-group" ng-class="{'has-error': validate && form.name.$error.required}">
+				<label class="control-label" for="name">Nombre <span class="required">*</span></label>
+				<div>
+					<input type="text" id="name" name="name" class="form-control" ng-model="fd.company.name" required>
+				</div>
+				<p class="help-block ng-hide" ng-show="validate && form.name.$error.required">Ingrese el nombre del restaurant</p>
+			</div>
+			<div class="form-group" ng-class="{'has-error': validate && form.description.$error.required}">
+				<label class="control-label" for="description">Descripción <span class="required">*</span></label>
+				<div>
+					<textarea id="description" name="description" class="form-control" ng-model="fd.company.description"></textarea>
+				</div>
+				<p class="help-block ng-hide" ng-show="validate && form.description.$error.required">Ingrese una descripción del restaurant</p>
+			</div>
+		</div>
+	</div>
+	<div class="block block-rounded">
+		<div class="block-header remove-padding-b">
+			<h4 class="block-title">Información de Contacto</h4>
+		</div>
+		<div class="block-content">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group" ng-class="{'has-error': validate && form.email.$error.required}">
+						<label class="control-label" for="email">Email <span class="required">*</span></label>
+						<div>
+							<input type="text" id="email" name="email" class="form-control" ng-model="fd.company.email" required>
+						</div>
+						<p class="help-block ng-hide" ng-show="validate && form.name.$error.required">Ingrese el email del restaurant</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group" ng-class="{'has-error': validate && form.phone.$error.required}">
+						<label class="control-label" for="phone">Teléfono <span class="required">*</span></label>
+						<div>
+							<input type="text" id="phone" name="phone" class="form-control" ng-model="fd.company.phone" required>
+						</div>
+						<p class="help-block ng-hide" ng-show="validate && form.name.$error.required">Ingrese el teléfono del restaurant</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</fieldset>
