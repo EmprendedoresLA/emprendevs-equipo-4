@@ -30,5 +30,5 @@ Luego, para correr el servidor de desarrollo se debe ejecutar el comando 'php ar
 
 El front-end se encuentra en el directorio '/public/frontend/html', y puede verlo en 'http://localhost:8000/frontend/html/home.html'.
 
-Para ingresar al backend primero debe registrarse en 'http://localhost:8000/auth/register' y luego ingresar a 'http://localhost:8000/admin'.
+Para ingresar al administrador del restaurante primero debe registrarse en 'http://localhost:8000/auth/register' y luego ingresar a 'http://localhost:8000/admin'.
 
